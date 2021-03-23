@@ -22,5 +22,16 @@ public class ListaSE {
         return true;
     }
     
-
+    // Metodo usando un ayudante
+    public boolean adicionarNodoAlInicio(Nodo nodo){
+        if (cabeza == null){
+            cabeza = nodo;
+        }
+        else{
+            Nodo temp = cabeza;
+            cabeza = nodo;
+            cabeza.setSiguiente(temp);
+        }
+        return true;
+    }
 }
