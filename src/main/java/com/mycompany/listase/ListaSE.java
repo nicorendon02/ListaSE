@@ -34,4 +34,20 @@ public class ListaSE {
         }
         return true;
     }
+    
+    public int contarNodos(){
+        if (cabeza == null){
+            return 0;
+        }
+        else{
+            int cont = 1;
+            Nodo temp = cabeza;
+            while (temp.getSiguiente() != null){
+                cont++;
+                temp = temp.getSiguiente();
+            }
+            return cont;
+        }
+    }
+    // quedamos en el 03:06:09 de la clase
 }
