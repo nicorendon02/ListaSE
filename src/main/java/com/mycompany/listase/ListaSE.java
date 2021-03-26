@@ -7,6 +7,19 @@ package com.mycompany.listase;
 public class ListaSE {
     public Nodo cabeza;
 
+    public Nodo getCabeza() {
+        return cabeza;
+    }
+
+    public void setCabeza(Nodo cabeza) {
+        this.cabeza = cabeza;
+    }
+
+    @Override
+    public String toString() {
+        return "ListaSE{" + "cabeza=" + cabeza + '}';
+    }
+    
     public boolean adicionarNodo(Nodo nodo){
         if (cabeza == null){
             cabeza = nodo;
@@ -49,5 +62,17 @@ public class ListaSE {
             return cont;
         }
     }
-    // quedamos en el 03:06:09 de la clase
+    
+    public void invertir(){
+        if (cabeza != null){
+            ListaSE listaTemp = new ListaSE();
+            Nodo temp = cabeza;
+            while (temp != null){
+                Nodo nodoNuevo = new Nodo(temp.getDato(),temp.getSiguiente());  // revisar
+                listaTemp.adicionarNodoAlInicio(nodoNuevo);
+                temp = temp.getSiguiente();
+            }
+            cabeza = listaTemp.getCabeza();
+        }
+    }
 }
